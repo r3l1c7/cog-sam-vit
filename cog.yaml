@@ -12,7 +12,7 @@ build:
     - torchvision==0.15.2
     - opencv-python
     - pycocotools
-    - numpy
+    - "numpy<2"  # Force NumPy 1.x compatibility
     - requests
   run:
     - pip install 'git+https://github.com/facebookresearch/segment-anything.git'
