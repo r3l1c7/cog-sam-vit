@@ -16,10 +16,9 @@ build:
     - "numpy<2.0.0"  # Downgrade NumPy to a version below 2.0
     - requests
   run:
+    - mkdir -p checkpoints
     - wget -P checkpoints https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth
     - pip install 'git+https://github.com/facebookresearch/segment-anything.git'
-    - mkdir -p checkpoints
-
     - echo "env is ready!"
 
 predict: "predict.py:Predictor"
