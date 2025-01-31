@@ -1,8 +1,9 @@
 # Configuration for Cog ⚙️
-# Reference: https://github.com/replicate/cog/blob/main/docs/yaml.md
+# Reference: https://cog.run/yaml/
 
 build:
   gpu: true
+  cuda: "11.7"  # Specify the CUDA version compatible with your environment
   system_packages:
     - "libgl1-mesa-glx"
     - "libglib2.0-0"
@@ -13,7 +14,7 @@ build:
     - torchvision==0.15.2
     - opencv-python
     - pycocotools
-    - "numpy<2"  # Force NumPy 1.x compatibility
+    - numpy==2.0.0  # Use NumPy 2.0.0 for compatibility
     - requests
   run:
     - pip install 'git+https://github.com/facebookresearch/segment-anything.git'
@@ -22,6 +23,3 @@ build:
     - echo "env is ready!"
 
 predict: "predict.py:Predictor"
-
-
-# image: "r8.im/peter65374/sam-vit"
